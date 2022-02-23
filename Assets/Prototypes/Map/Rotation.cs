@@ -5,23 +5,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Rotator : MonoBehaviour
+public class Rotation : MonoBehaviour
 {
     public Camera lookingCamera;
-
-    public float Angle;
-
-    public GameObject player;
+    public Transform userIndicator;
 
     void Update() {
         Vector2 lookDirection = new Vector2(lookingCamera.transform.forward.x, lookingCamera.transform.forward.z);
-        lookingCamera.transform.rotation = 
-    }
-
-    void UpdateRo
-
-
-
-    
+        float angle = Vector2.SignedAngle(lookDirection, new Vector2(0, 1));
+        userIndicator.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }  
 }
 
