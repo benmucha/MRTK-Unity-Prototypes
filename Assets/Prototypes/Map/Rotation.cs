@@ -13,7 +13,7 @@ public class Rotation : MonoBehaviour
     void Update() {
         Vector2 lookDirection = new Vector2(lookingCamera.transform.forward.x, lookingCamera.transform.forward.z);
         float angle = Vector2.SignedAngle(lookDirection, new Vector2(0, 1));
-        userIndicator.transform.rotation = Quaternion.Euler(0, 0, angle);
+        userIndicator.transform.localRotation = Quaternion.Euler(0, 0, angle);
     }  
 }
 
